@@ -1,19 +1,17 @@
-import * as http from 'node:http';
+import { VercelRequest, VercelResponse } from '@vercel/node';
+// import * as http from 'node:http';
 
-export default function postHandler(
-  req: http.IncomingMessage,
-  res: http.ServerResponse,
-) {
+export default function postHandler(req: VercelRequest, res: VercelResponse) {
   switch (req.method) {
     case 'GET': {
       res.statusCode = 200;
       res.setHeader('Content-Type', 'application/json');
-      const jsonString = JSON.stringify({
+      const obj = {
         title: 'New Post',
         id: 1,
         description: 'New post description',
-      });
-      res.end(jsonString);
+      };
+      res.json(obj);
       break;
     }
     case 'OPTIONS': {
@@ -22,8 +20,9 @@ export default function postHandler(
       break;
     }
     case 'POST': {
-      const jsonString = JSON.stringify('Added new Post');
-      res.end(jsonString);
+      res.setHeader('Content-Type', 'application/json');
+      const jsonString = { message: 'Added new post' };
+      res.json(jsonString);
       break;
     }
   }
