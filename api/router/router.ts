@@ -1,9 +1,10 @@
-import * as http from 'node:http';
+// import * as http from 'node:http';
 import postHandler from './post.route';
+import { VercelRequest, VercelResponse } from '@vercel/node';
 
-export default function handleRequest(
-  req: http.IncomingMessage,
-  res: http.ServerResponse,
+export default function handleRequest (
+  req: VercelRequest,
+  res: VercelResponse
 ) {
   switch (req.url) {
     case '/':
