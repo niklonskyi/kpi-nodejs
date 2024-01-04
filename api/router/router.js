@@ -1,11 +1,6 @@
-// import * as http from 'node:http';
 import postHandler from './post.route';
-import { VercelRequest, VercelResponse } from '@vercel/node';
 
-export default function handleRequest (
-  req: VercelRequest,
-  res: VercelResponse
-) {
+export default function handleRequest (req, res) {
   switch (req.url) {
     case '/':
       res.statusCode = 200;

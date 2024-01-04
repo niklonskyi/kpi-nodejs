@@ -1,7 +1,4 @@
-import { VercelRequest, VercelResponse } from '@vercel/node';
-// import * as http from 'node:http';
-
-export default function postHandler(req: VercelRequest, res: VercelResponse) {
+export default function postHandler (req, res) {
   switch (req.method) {
     case 'GET': {
       res.statusCode = 200;
