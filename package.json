@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Kpi Node.js labs",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint .",
@@ -29,8 +30,7 @@
     "prettier": "3.1.1",
     "husky": "^8.0.3"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "prettier": {
     "singleQuote": true
   }
